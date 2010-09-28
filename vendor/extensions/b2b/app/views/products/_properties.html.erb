@@ -1,0 +1,28 @@
+<!-- Product Price -->
+<% unless @product_properties.empty? %>
+  <% if product_price(@product) %>
+    <h4 class="fc-grey1">
+      <%= t("price") %>
+      <%= product_price(@product) %>
+    </h4>
+  <% end %>
+
+  <!-- Property product -->
+  <div class="clear"></div>
+  <p><% for product_property in @product_properties %></p>
+    <p class="fs09">
+      <%= product_property.property.presentation %> :
+      <%= product_property.value %>
+    <% end %>
+  </p>
+<% end %>
+
+<!-- SHARE THIS -->
+<div class="clear"></div>
+<div class="share2">
+  <p>SHARE THIS:</p>
+  <a href="#" class="fb" alt="Facebook"/></a>
+<a href="#" class="tw" alt="Twitter" /></a>
+<a href="#" class="dl" alt="Delicious" /></a>
+<a href="#" class="more" alt="More" /></a>
+</div>

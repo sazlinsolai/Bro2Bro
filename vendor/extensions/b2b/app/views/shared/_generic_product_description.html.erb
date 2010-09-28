@@ -1,0 +1,19 @@
+
+
+
+
+
+                <% unless @product_properties.empty? %>
+                  <div class="right710">
+                    <div class="m-top25">
+                      <div class="right320">
+                      <% for product_property in @product_properties %>
+                        
+                          <%= product_property.property.presentation %>
+                          <p><%= product_property.value %></p>
+                        
+                      <% end %>
+                          </div>
+                    </div>
+                  </div>
+                <% end %>

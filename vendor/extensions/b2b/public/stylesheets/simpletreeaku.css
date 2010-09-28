@@ -1,0 +1,41 @@
+.treeview ul { /*CSS for Simple Tree Menu*/
+
+}
+
+.treeview li { /*Style for LI elements in general (excludes an LI that contains sub lists)*/
+
+}
+
+.treeview li.submenu { /* Style for LI that contains sub lists (other ULs). */
+cursor: hand !important;
+cursor: pointer !important;
+padding: 4px 0 4px 0;
+background: url('../images/nav-off.gif');
+background-repeat: no-repeat;
+}
+
+
+.treeview li.submenu ul { /*Style for ULs that are children of LIs (submenu) */
+display: none; /*Hide them by default. Don't delete. */
+color: #000;
+padding: 0 0 0 15px;
+}
+
+.treeview .submenu ul li { /*Style for LIs of ULs that are children of LIs (submenu) */
+cursor: default;
+border: none;
+}
+
+.treeview .submenu ul li a { /*Style for LIs of ULs that are children of LIs (submenu) */
+display: block;
+color: #555;
+}
+
+.treeview .submenu ul li a:hover { /*Style for LIs of ULs that are children of LIs (submenu) */
+color: #000;
+}
+
+
+		.left-nav li.off {
+			background: url('../images/nav-off.gif');
+		}

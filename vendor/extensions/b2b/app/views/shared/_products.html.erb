@@ -1,0 +1,82 @@
+
+
+
+<%
+paginated_products = @searcher.products if params.key?(:keywords)
+paginated_products ||= products
+%>
+
+
+  <div><img class="m-top25" src="/images/carousel-1.png" alt="Promotional Items"/></div>
+
+
+  <!-- MAI KAMI TEST CAROUSEL UNTUK BRAND LOGOS -->
+
+  <div id="carousel">
+
+    <div id="slider">
+      <ul>
+        <li><a href="#"><img src="images/carousel-1.gif" alt="Css Template Preview" /></a></li>
+        <li><a href="#"><img src="images/carousel-2.gif" alt="Css Template Preview" /></a></li>
+        <li><a href="#"><img src="images/carousel-3.gif" alt="Css Template Preview" /></a></li>
+        <li><a href="#"><img src="images/carousel-4.gif" alt="Css Template Preview" /></a></li>
+      </ul>
+
+    </div>
+
+
+  </div>
+
+  <!-- LABEL -->
+  <div class="two-borders fs09 m-top20">LATEST ITEMS</div>
+
+
+  <!-- PRODUCTS LIST -->
+  <div>
+  <% if products.empty? %>
+    <%= t(:no_products_found) %>
+  <% elsif params.key?(:keywords) %>
+    <h3><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
+  <% end %>
+
+
+  <% if products.any? %>
+      <ul class="product-list center">
+      <% products.each do |product| %>  
+        <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>      
+            <li>
+            <%#= product.id %>
+              <div>
+              <%= link_to small_image(product), product %>
+              <p class="m-top15"><%= link_to raw(product.name), product%></p>
+              <h4 class="fc-grey1"><%= link_to raw(product_price(product)), product%></h4>
+              </div>
+              <div class="share">
+                <p>SHARE THIS:</p>
+                <a href="#" class="fb" alt="Facebook"/></a>
+                <a href="#" class="tw" alt="Twitter" /></a>
+                <a href="#" class="dl" alt="Delicious" /></a>
+                <a href="#" class="more" alt="More" /></a>
+              </div>
+
+            </li>        
+        <% end %>        
+      <% end %>
+            </ul>
+  <% end %>
+
+</div>
+<hr class="space" />
+
+<% if paginated_products.respond_to?(:total_pages)
+  params.delete(:search)
+  params.delete(:taxon)
+
+%><%= will_paginate(paginated_products,
+    :previous_label => "&#171; #{t('previous')}",
+    :next_label => "#{t('next')} &#187;") %>
+<% end %>
+
+<hr class="space" />
+
+

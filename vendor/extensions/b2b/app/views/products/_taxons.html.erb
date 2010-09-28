@@ -1,0 +1,14 @@
+<div class="one-border-top m-top25 related">RELATED ITEMS
+  <ul>
+    <% if !@product.taxons.blank? %>
+      <% @product.taxons.each do |taxon| %>
+        <li>
+          <div>
+            <%= link_to taxon.name, "/t/#{taxon.permalink}" %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<div class="clear"></div>

@@ -1,0 +1,46 @@
+
+<% if @product.has_variants? %>
+  <div id="product-variants">
+    <h2><%= t('variants') %></h2>
+    <ul>
+      <%  has_checked = false
+      @product.variants.active.each_with_index do |v,index|
+        next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
+        checked = !has_checked && (v.in_stock || Spree::Config[:allow_backorders])
+        has_checked = true if checked %>
+        <li>
+          <label>
+            <%= radio_button_tag "products[#{@product.id}]", v.id, checked, :disabled => !v.in_stock && !Spree::Config[:allow_backorders] %>
+            <span class="variant-description">
+              <%= variant_options v %>
+            </span>
+            <% if variant_price_diff v %>
+              <span class="price diff"><%= variant_price_diff v %></span>
+            <% end %>
+          </label>
+        </li>
+      <% end%>
+    </ul>
+  </div>
+<% end%>
+
+<!-- Quantity -->
+<div id="cart-button">
+  <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
+    <%= text_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+      1, :class => "title", :size => 3 %>
+    &nbsp;
+
+    <!-- BUTTON: ADD TO CART -->
+    <div class="clear"></div>
+    <a class="button">
+      <%= image_tag('/images/arrow-1.png') + t('add_to_cart') %>
+    </a>
+  <% else %>
+    <%= content_tag('strong', t('out_of_stock')) %>
+  <% end %>
+</div>
+
+<% content_for :head do %>
+  <%= javascript_include_tag 'product' %>
+<% end %>
