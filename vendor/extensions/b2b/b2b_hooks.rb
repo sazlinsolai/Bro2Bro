@@ -40,4 +40,12 @@ class B2bHooks < Spree::ThemeSupport::HookListener
   #   end
   #
 
+  insert_after :inside_head, 'shared/styles'
+  insert_after :hompage_products, 'shared/products'
+  remove :product_description
+  replace :product_properties, 'shared/generic_product_description'
+  replace :inside_product_cart_form, 'shared/cart_form'
+  replace :product_price, 'shared/cart_form'
+  replace :product_taxons, 'shared/taxons'
+
 end

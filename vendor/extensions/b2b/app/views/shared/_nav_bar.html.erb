@@ -5,19 +5,19 @@
 
 <!-- Cart -->
 <div class="cart-bar">
-<% if store_menu? %>
-  <%= render 'shared/store_menu' %>
-<% end %>
+  <% if store_menu? %>
+    <%= render 'shared/store_menu' %>
+  <% end %>
 </div>
 <div class="clear"></div>
 
 <!-- Search & Nav Links -->
 <div class="header">
   <div id="logo"><a href="index.html"><img alt="logo" src="/images/logo-1.jpg" /></a></div>
-<div id="searchbox">
-  <%= render 'shared/search' %>
-</div>
-<div class="clear"></div>
+  <div id="searchbox">
+    <%= render 'shared/search' %>
+  </div>
+  <div class="clear"></div>
   <%= render 'shared/logonav' %>
-<div class="clear"></div>
+  <div class="clear"></div>
 </div>

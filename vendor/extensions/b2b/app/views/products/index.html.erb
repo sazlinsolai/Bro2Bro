@@ -1,74 +1,63 @@
-
- 
 <%  content_for :sidebar do  %>
- <div class="left240">
-   <h3 class="m-top25">CATEGORIES</h3>
+  <div class="left240">
+    <h3 class="m-top25">CATEGORIES</h3>
   <%#= hook :homepage_sidebar_navigation do %>
     <% if "products" == @current_controller && @taxon %>
       <%= render "shared/filters" %>
     <% else %>
       <%= render "shared/taxonomies" %>
     <% end %>
-   </div>
-  <% end %>
+  </div>
+<% end %>
 <%# end %>
 
 
 <div class="right710">
-<% if params[:keywords] %>
-
-
-
+  <% if params[:keywords] %>
   <%#= hook :search_results do %>
     <% if @products.empty? %>
-
       <%= t(:no_products_found) %>
     <% else %>
       <%= render "shared/products", :products => @products, :taxon => @taxon %>
-  
     <% end %>
   <%# end %>
-
-<% else %>
-
+  <% else %>
   <%#= hook :homepage_products do %>
     <%= render "shared/products", :products => @products, :taxon => @taxon %>
   <%# end %>
-
-
-<% end %>
+  <% end %>
 </div>
 
 
-        <script type="text/javascript">
-            //ddtreemenu.createTree(treeid, enablepersist, opt_persist_in_days (default is 1))
-            ddtreemenu.createTree("treemenu1", true)
-        </script>
+<script type="text/javascript">
+  //ddtreemenu.createTree(treeid, enablepersist, opt_persist_in_days (default is 1))
+  ddtreemenu.createTree("treemenu1", true)
+</script>
 
 
-        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 
-        <script type="text/javascript">
-            stLight.options({
-                publisher:'12345',
-            });
-        </script>
+<script type="text/javascript">
+  stLight.options({
+    publisher:'12345',
+  });
+</script>
 
-                <script type="text/javascript" src="/javascripts/jquery.js"></script>
-        <script type="text/javascript" src="/public/javascripts/easySlider1.7.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $("#slider").easySlider({
-                    auto: true,
-                    continuous: true
-                });
-            });
-        </script>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/public/javascripts/easySlider1.7.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#slider").easySlider({
+      auto: true,
+      continuous: true
+    });
+  });
+</script>
 
-                <script type="text/javascript" src="/public/javascripts/simpletreemenu.js">
-            /***********************************************
-             * Simple Tree Menu- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
-             * This notice MUST stay intact for legal use
-             * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-             ***********************************************/
-        </script>
+<script type="text/javascript" src="/public/javascripts/simpletreemenu.js">
+  /***********************************************
+   * Simple Tree Menu- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+   * This notice MUST stay intact for legal use
+   * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+   ***********************************************/
+</script>

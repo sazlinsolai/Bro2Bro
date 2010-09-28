@@ -19,4 +19,10 @@ class B2bExtension < Spree::Extension
     #   helper YourHelper
     # end
   end
+
+  def activate
+    AppConfiguration.class_eval do
+      preference :logo, :string, :default => 'logo-1.jpg'
+    end
+  end
 end

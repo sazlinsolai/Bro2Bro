@@ -3,21 +3,17 @@
 
 <div class="right710">
   <div class="m-top25">
-
     <div class="left350">
       <%= render 'image' %>
     </div>
-
     <div class="right320">
+      <!-- Product Name -->
+      <h3 class="fc-grey2"><%= @product.name %></h3>
+      <!-- Product Description -->
       <%= product_description(@product) rescue t("product_has_no_description") %>
       <%= render 'properties' %>
       <%= render 'cart_form' %>
     </div>
   </div>
-
-
-  <div class="one-border-top m-top25 related">
   <%= render 'taxons' %>
-  </div>
-  
 </div>

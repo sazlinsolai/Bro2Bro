@@ -1,12 +1,9 @@
 <div class="p-3">
-<% if current_user %>
-  
+  <% if current_user %>
     <%= link_to t('my_account'), edit_user_path(current_user) %> |
-    <%= link_to t('logout'), logout_path %> | 
+    <%= link_to t('logout'), logout_path %> |
     <%= link_to t("home") , root_path %>
   <% else %>
     <%= link_to t('log_in'), login_path %>
-    
-
-<% end %>
-    </div>
+  <% end %>
+</div>
