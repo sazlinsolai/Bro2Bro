@@ -1,0 +1,1286 @@
+# Logfile created on Tue Sep 28 13:15:16 +0800 2010INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/theme_default/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/overview_dashboard/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/payment_gateway/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Loading mail preferences
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+=========================================================================
+ERROR: Something went wrong while loading mail preferences
+       Verify you created a default configuration in admin/configurations
+=========================================================================
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.0ms)[0m   [0mMysql::Error: Table 'bro2bro_dev.users' doesn't exist: SHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+INFO: Loading initializer /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/config/initializers/session_store.rb
+  [4;36;1mOrder Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'bro2bro_dev.orders' doesn't exist: SHOW FIELDS FROM `orders`[0m
+  [4;35;1mShipment Columns (0.0ms)[0m   [0mMysql::Error: Table 'bro2bro_dev.shipments' doesn't exist: SHOW FIELDS FROM `shipments`[0m
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/api/config/routes.rb
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/overview_dashboard/config/routes.rb
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/payment_gateway/config/routes.rb
+INFO: Loading routes from /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/config/routes.rb
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (157.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (267.3ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to SpreeZeroNineZero (20090823005402)
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (118.0ms)[0m   [0;1mCREATE TABLE `addresses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `firstname` varchar(255), `lastname` varchar(255), `address1` varchar(255), `address2` varchar(255), `city` varchar(255), `state_id` int(11), `zipcode` varchar(255), `country_id` int(11), `phone` varchar(255), `created_at` datetime, `updated_at` datetime, `state_name` varchar(255), `alternative_phone` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.4ms)[0m   [0;1mCREATE TABLE `adjustments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_id` int(11), `type` varchar(255), `amount` decimal(8,2) DEFAULT 0.0 NOT NULL, `description` varchar(255), `position` int(11), `created_at` datetime, `updated_at` datetime, `adjustment_source_id` int(11), `adjustment_source_type` varchar(255), `secondary_type` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.6ms)[0m   [0;1mCREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `viewable_id` int(11), `viewable_type` varchar(50), `attachment_content_type` varchar(255), `attachment_file_name` varchar(255), `attachment_size` int(11), `position` int(11), `type` varchar(75), `attachment_updated_at` datetime, `attachment_width` int(11), `attachment_height` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.2ms)[0m   [0;1mCREATE TABLE `calculators` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` varchar(255), `calculable_id` int(11) NOT NULL, `calculable_type` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mCREATE TABLE `checkouts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_id` int(11), `email` varchar(255), `ip_address` varchar(255), `special_instructions` text, `bill_address_id` int(11), `completed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.2ms)[0m   [0;1mCREATE TABLE `configurations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime, `type` varchar(50)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `configurations`[0m
+  [4;36;1mSQL (211.5ms)[0m   [0;1mCREATE INDEX `index_configurations_on_name_and_type` ON `configurations` (`name`, `type`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (111.1ms)[0m   [0;1mCREATE TABLE `countries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `iso_name` varchar(255), `iso` varchar(255), `name` varchar(255), `iso3` varchar(255), `numcode` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.7ms)[0m   [0;1mCREATE TABLE `coupons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255), `description` varchar(255), `usage_limit` int(11), `combine` tinyint(1), `expires_at` datetime, `created_at` datetime, `updated_at` datetime, `starts_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (130.7ms)[0m   [0;1mCREATE TABLE `creditcard_txns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `creditcard_payment_id` int(11), `amount` decimal(8,2) DEFAULT 0.0 NOT NULL, `txn_type` int(11), `response_code` varchar(255), `avs_response` text, `cvv_response` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (107.5ms)[0m   [0;1mCREATE TABLE `creditcards` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` text, `month` varchar(255), `year` varchar(255), `verification_value` text, `cc_type` varchar(255), `display_number` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `created_at` datetime, `updated_at` datetime, `start_month` varchar(255), `start_year` varchar(255), `issue_number` varchar(255), `address_id` int(11), `checkout_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (110.1ms)[0m   [0;1mCREATE TABLE `gateway_configurations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gateway_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.1ms)[0m   [0;1mCREATE TABLE `gateway_option_values` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gateway_configuration_id` int(11), `gateway_option_id` int(11), `value` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.3ms)[0m   [0;1mCREATE TABLE `gateway_options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `gateway_id` int(11), `textarea` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.0ms)[0m   [0;1mCREATE TABLE `gateways` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `clazz` varchar(255), `name` varchar(255), `description` text, `active` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.4ms)[0m   [0;1mCREATE TABLE `inventory_units` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `variant_id` int(11), `order_id` int(11), `state` varchar(255), `lock_version` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (97.6ms)[0m   [0;1mCREATE TABLE `line_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_id` int(11), `variant_id` int(11), `quantity` int(11) NOT NULL, `price` decimal(8,2) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `line_items`[0m
+  [4;36;1mSQL (211.4ms)[0m   [0;1mCREATE INDEX `index_line_items_on_order_id` ON `line_items` (`order_id`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `line_items`[0m
+  [4;36;1mSQL (246.8ms)[0m   [0;1mCREATE INDEX `index_line_items_on_variant_id` ON `line_items` (`variant_id`)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.2ms)[0m   [0;1mCREATE TABLE `option_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(100), `presentation` varchar(100), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.7ms)[0m   [0;1mCREATE TABLE `option_types_prototypes` (`prototype_id` int(11), `option_type_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.2ms)[0m   [0;1mCREATE TABLE `option_values` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option_type_id` int(11), `name` varchar(255), `position` int(11), `presentation` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.9ms)[0m   [0;1mCREATE TABLE `option_values_variants` (`variant_id` int(11), `option_value_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `option_values_variants`[0m
+  [4;36;1mSQL (222.3ms)[0m   [0;1mCREATE INDEX `index_option_values_variants_on_variant_id` ON `option_values_variants` (`variant_id`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (107.5ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `number` varchar(15), `item_total` decimal(8,2) DEFAULT 0.0 NOT NULL, `total` decimal(8,2) DEFAULT 0.0 NOT NULL, `created_at` datetime, `updated_at` datetime, `state` varchar(255), `token` varchar(255), `adjustment_total` decimal(8,2) DEFAULT 0.0 NOT NULL, `credit_total` decimal(8,2) DEFAULT 0.0 NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `orders`[0m
+  [4;36;1mSQL (212.2ms)[0m   [0;1mCREATE INDEX `index_orders_on_number` ON `orders` (`number`)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (97.5ms)[0m   [0;1mCREATE TABLE `payments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_id` int(11), `created_at` datetime, `updated_at` datetime, `amount` decimal(8,2) DEFAULT 0.0 NOT NULL, `creditcard_id` int(11), `type` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mCREATE TABLE `preferences` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `attribute` varchar(100) NOT NULL, `owner_id` integer NOT NULL, `owner_type` varchar(50) NOT NULL, `group_id` int(11), `group_type` varchar(50), `value` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `preferences`[0m
+  [4;36;1mSQL (234.1ms)[0m   [0;1mCREATE UNIQUE INDEX `index_preferences_on_owner_and_attribute_and_preference` ON `preferences` (`owner_id`, `owner_type`, `attribute`, `group_id`, `group_type`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.7ms)[0m   [0;1mCREATE TABLE `product_option_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `option_type_id` int(11), `position` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.5ms)[0m   [0;1mCREATE TABLE `product_properties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `property_id` int(11), `value` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.5ms)[0m   [0;1mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT '' NOT NULL, `description` text, `created_at` datetime, `updated_at` datetime, `permalink` varchar(255), `available_on` datetime, `tax_category_id` int(11), `shipping_category_id` int(11), `deleted_at` datetime, `meta_description` varchar(255), `meta_keywords` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (211.7ms)[0m   [0;1mCREATE INDEX `index_products_on_available_on` ON `products` (`available_on`)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (200.2ms)[0m   [0;1mCREATE INDEX `index_products_on_deleted_at` ON `products` (`deleted_at`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (246.6ms)[0m   [0;1mCREATE INDEX `index_products_on_name` ON `products` (`name`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (222.8ms)[0m   [0;1mCREATE INDEX `index_products_on_permalink` ON `products` (`permalink`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.5ms)[0m   [0;1mCREATE TABLE `products_taxons` (`product_id` int(11), `taxon_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `products_taxons`[0m
+  [4;36;1mSQL (222.8ms)[0m   [0;1mCREATE INDEX `index_products_taxons_on_product_id` ON `products_taxons` (`product_id`)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `products_taxons`[0m
+  [4;36;1mSQL (200.1ms)[0m   [0;1mCREATE INDEX `index_products_taxons_on_taxon_id` ON `products_taxons` (`taxon_id`)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (97.3ms)[0m   [0;1mCREATE TABLE `properties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `presentation` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.2ms)[0m   [0;1mCREATE TABLE `properties_prototypes` (`prototype_id` int(11), `property_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (120.0ms)[0m   [0;1mCREATE TABLE `prototypes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.9ms)[0m   [0;1mCREATE TABLE `queued_mails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object` text, `mailer` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (121.8ms)[0m   [0;1mCREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.3ms)[0m   [0;1mCREATE TABLE `roles_users` (`role_id` int(11), `user_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `roles_users`[0m
+  [4;36;1mSQL (233.9ms)[0m   [0;1mCREATE INDEX `index_roles_users_on_role_id` ON `roles_users` (`role_id`)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `roles_users`[0m
+  [4;36;1mSQL (211.3ms)[0m   [0;1mCREATE INDEX `index_roles_users_on_user_id` ON `roles_users` (`user_id`)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (107.7ms)[0m   [0;1mCREATE TABLE `shipments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_id` int(11), `shipping_method_id` int(11), `tracking` varchar(255), `created_at` datetime, `updated_at` datetime, `number` varchar(255), `cost` decimal(8,2), `shipped_at` datetime, `address_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (97.7ms)[0m   [0;1mCREATE TABLE `shipping_categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (119.6ms)[0m   [0;1mCREATE TABLE `shipping_methods` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `zone_id` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (119.9ms)[0m   [0;1mCREATE TABLE `shipping_rates` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `shipping_category_id` int(11), `shipping_method_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (108.8ms)[0m   [0;1mCREATE TABLE `state_events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_id` int(11), `user_id` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime, `previous_state` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (130.3ms)[0m   [0;1mCREATE TABLE `states` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `abbr` varchar(255), `country_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (130.8ms)[0m   [0;1mCREATE TABLE `tax_categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mCREATE TABLE `tax_rates` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `zone_id` int(11), `amount` decimal(8,4), `created_at` datetime, `updated_at` datetime, `tax_category_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mCREATE TABLE `taxonomies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (96.7ms)[0m   [0;1mCREATE TABLE `taxons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `taxonomy_id` int(11) NOT NULL, `parent_id` int(11), `position` int(11) DEFAULT 0, `name` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime, `permalink` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (90.9ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `crypted_password` varchar(128) DEFAULT '' NOT NULL, `salt` varchar(128) DEFAULT '' NOT NULL, `remember_token` varchar(255), `remember_token_expires_at` varchar(255), `created_at` datetime, `updated_at` datetime, `persistence_token` varchar(255), `single_access_token` varchar(255), `perishable_token` varchar(255), `login_count` int(11) DEFAULT 0 NOT NULL, `failed_login_count` int(11) DEFAULT 0 NOT NULL, `last_request_at` datetime, `current_login_at` datetime, `last_login_at` datetime, `current_login_ip` varchar(255), `last_login_ip` varchar(255), `login` varchar(255), `ship_address_id` int(11), `bill_address_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (103.9ms)[0m   [0;1mCREATE TABLE `variants` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `sku` varchar(255) DEFAULT '' NOT NULL, `price` decimal(8,2) NOT NULL, `weight` decimal(8,2), `height` decimal(8,2), `width` decimal(8,2), `depth` decimal(8,2), `deleted_at` datetime, `is_master` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `variants`[0m
+  [4;36;1mSQL (222.9ms)[0m   [0;1mCREATE INDEX `index_variants_on_product_id` ON `variants` (`product_id`)[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (107.9ms)[0m   [0;1mCREATE TABLE `zone_members` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `zone_id` int(11), `zoneable_id` int(11), `zoneable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (119.1ms)[0m   [0;1mCREATE TABLE `zones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090823005402')[0m
+Migrating to CreateIndexesForInventoryUnits (20090904192342)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `inventory_units`[0m
+  [4;35;1mSQL (249.8ms)[0m   [0mCREATE INDEX `index_inventory_units_on_variant_id` ON `inventory_units` (`variant_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `inventory_units`[0m
+  [4;35;1mSQL (233.8ms)[0m   [0mCREATE INDEX `index_inventory_units_on_order_id` ON `inventory_units` (`order_id`)[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090904192342')[0m
+Migrating to AddCountOnHandToVariantsAndProducts (20090923100315)
+  [4;35;1mSQL (260.9ms)[0m   [0mALTER TABLE `variants` ADD `count_on_hand` int(11) DEFAULT 0 NOT NULL[0m
+  [4;36;1mSQL (434.9ms)[0m   [0;1mALTER TABLE `products` ADD `count_on_hand` int(11) DEFAULT 0 NOT NULL[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mVariant Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mVariant Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mVariant Load (0.3ms)[0m   [0mSELECT * FROM `variants` [0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` [0m
+  [4;35;1mSQL (35.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090923100315')[0m
+Migrating to ChangeTaxonsToNestedSet (20091007134354)
+  [4;36;1mSQL (221.9ms)[0m   [0;1mALTER TABLE `taxons` ADD `lft` int(11)[0m
+  [4;35;1mSQL (246.1ms)[0m   [0mALTER TABLE `taxons` ADD `rgt` int(11)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.3ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Load (0.6ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id IS NULL) ORDER BY position ASC[0m
+  [4;35;1mSQL (76.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091007134354')[0m
+Migrating to ProductGroupsAndScopes (20091012120519)
+  [4;36;1mSQL (125.7ms)[0m   [0;1mCREATE TABLE `product_groups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `permalink` varchar(255), `order` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (155.6ms)[0m   [0mCREATE TABLE `product_scopes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_group_id` int(11), `name` varchar(255), `arguments` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `product_groups`[0m
+  [4;35;1mSQL (223.1ms)[0m   [0mCREATE INDEX `index_product_groups_on_name` ON `product_groups` (`name`)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `product_groups`[0m
+  [4;35;1mSQL (211.4ms)[0m   [0mCREATE INDEX `index_product_groups_on_permalink` ON `product_groups` (`permalink`)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `product_scopes`[0m
+  [4;35;1mSQL (212.7ms)[0m   [0mCREATE INDEX `index_product_scopes_on_name` ON `product_scopes` (`name`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `product_scopes`[0m
+  [4;35;1mSQL (256.1ms)[0m   [0mCREATE INDEX `index_product_scopes_on_product_group_id` ON `product_scopes` (`product_group_id`)[0m
+  [4;36;1mSQL (32.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091012120519')[0m
+Migrating to AddOpenIdAuthenticationTables (20091015110842)
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (131.7ms)[0m   [0;1mCREATE TABLE `open_id_authentication_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `issued` int(11), `lifetime` int(11), `handle` varchar(255), `assoc_type` varchar(255), `server_url` blob, `secret` blob) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (119.7ms)[0m   [0;1mCREATE TABLE `open_id_authentication_nonces` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `timestamp` int(11) NOT NULL, `server_url` varchar(255), `salt` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (44.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091015110842')[0m
+Migrating to AddOpenidFieldToUsers (20091015153048)
+  [4;36;1mSQL (252.7ms)[0m   [0;1mALTER TABLE `users` ADD `openid_identifier` varchar(255)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (201.0ms)[0m   [0;1mCREATE INDEX `index_users_on_openid_identifier` ON `users` (`openid_identifier`)[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (52.7ms)[0m   [0;1mALTER TABLE `users` CHANGE `login` `login` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (188.8ms)[0m   [0;1mALTER TABLE `users` CHANGE `crypted_password` `crypted_password` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (342.2ms)[0m   [0;1mALTER TABLE `users` CHANGE `salt` `salt` varchar(255) DEFAULT NULL[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091015153048')[0m
+Migrating to ChangePreferenceValueType (20091016174634)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `preferences`[0m
+  [4;35;1mSQL (226.0ms)[0m   [0mALTER TABLE `preferences` CHANGE `value` `value` text DEFAULT NULL[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091016174634')[0m
+Migrating to CreateBillingIntegrations (20091017175558)
+  [4;35;1mSQL (103.0ms)[0m   [0mCREATE TABLE `billing_integrations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` varchar(255), `name` varchar(255), `description` text, `active` tinyint(1) DEFAULT 1, `environment` varchar(255) DEFAULT 'development', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091017175558')[0m
+Migrating to ChargeRefactoring (20091021133257)
+  [4;35;1mSQL (215.8ms)[0m   [0mALTER TABLE `orders` ADD `completed_at` datetime[0m
+  [4;36;1mChargeRefactoring::Order Load (0.3ms)[0m   [0;1mSELECT * FROM `orders` [0m
+  [4;35;1mSQL (202.1ms)[0m   [0mALTER TABLE `checkouts` DROP `completed_at`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `adjustments`[0m
+  [4;35;1mSQL (277.4ms)[0m   [0mALTER TABLE `adjustments` CHANGE `amount` `amount` decimal(8,2) DEFAULT NULL[0m
+  [4;36;1mAdjustment Update (0.4ms)[0m   [0;1mUPDATE `adjustments` SET type = secondary_type [0m
+  [4;35;1mAdjustment Update (0.2ms)[0m   [0mUPDATE `adjustments` SET type = 'CouponCredit' WHERE (type = 'Credit') [0m
+  [4;36;1mSQL (228.5ms)[0m   [0;1mALTER TABLE `adjustments` DROP `secondary_type`[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091021133257')[0m
+Migrating to AddSomeIndexes (20091104151730)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `taxons`[0m
+  [4;35;1mSQL (196.7ms)[0m   [0mCREATE INDEX `index_taxons_on_permalink` ON `taxons` (`permalink`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `taxons`[0m
+  [4;35;1mSQL (380.5ms)[0m   [0mCREATE INDEX `index_taxons_on_parent_id` ON `taxons` (`parent_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `taxons`[0m
+  [4;35;1mSQL (234.0ms)[0m   [0mCREATE INDEX `index_taxons_on_taxonomy_id` ON `taxons` (`taxonomy_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `assets`[0m
+  [4;35;1mSQL (389.4ms)[0m   [0mCREATE INDEX `index_assets_on_viewable_id` ON `assets` (`viewable_id`)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `assets`[0m
+  [4;35;1mSQL (211.1ms)[0m   [0mCREATE INDEX `index_assets_on_viewable_type_and_type` ON `assets` (`viewable_type`, `type`)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `product_properties`[0m
+  [4;35;1mSQL (200.9ms)[0m   [0mCREATE INDEX `index_product_properties_on_product_id` ON `product_properties` (`product_id`)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `option_values_variants`[0m
+  [4;35;1mSQL (201.8ms)[0m   [0mCREATE INDEX `index_option_values_variants_on_variant_id_and_option_value_id` ON `option_values_variants` (`variant_id`, `option_value_id`)[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091104151730')[0m
+Migrating to CheckoutStateMachine (20091126190904)
+  [4;35;1mSQL (228.8ms)[0m   [0mALTER TABLE `checkouts` ADD `state` varchar(255)[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091126190904')[0m
+Migrating to StateForShipments (20091209153045)
+  [4;35;1mSQL (194.6ms)[0m   [0mALTER TABLE `shipments` ADD `state` varchar(255)[0m
+  [4;36;1mSQL (32.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091209153045')[0m
+Migrating to MakeStateEventsPolymorphic (20091209202200)
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `state_events`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW COLUMNS FROM `state_events` LIKE 'order_id'[0m
+  [4;35;1mSQL (59.9ms)[0m   [0mALTER TABLE `state_events` CHANGE `order_id` `stateful_id` int(11) DEFAULT NULL[0m
+  [4;36;1mSQL (190.2ms)[0m   [0;1mALTER TABLE `state_events` ADD `stateful_type` varchar(255)[0m
+  [4;35;1mStateEvent Update (0.3ms)[0m   [0mUPDATE `state_events` SET `stateful_type` = 'Order' [0m
+  [4;36;1mSQL (37.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091209202200')[0m
+Migrating to ShipAddressIdForCheckouts (20091211203813)
+  [4;35;1mSQL (211.0ms)[0m   [0mALTER TABLE `checkouts` ADD `ship_address_id` int(11)[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091211203813')[0m
+Migrating to ShippingMethodIdForCheckouts (20091212161118)
+  [4;35;1mSQL (238.7ms)[0m   [0mALTER TABLE `checkouts` ADD `shipping_method_id` int(11)[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091212161118')[0m
+Migrating to CreditcardLastFourDigits (20091213222815)
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `creditcards`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW COLUMNS FROM `creditcards` LIKE 'display_number'[0m
+  [4;35;1mSQL (66.2ms)[0m   [0mALTER TABLE `creditcards` CHANGE `display_number` `last_digits` varchar(255) DEFAULT NULL[0m
+  [4;36;1mCreditcardLastFourDigits::Creditcard Load (0.5ms)[0m   [0;1mSELECT * FROM `creditcards` [0m
+  [4;35;1mSQL (30.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091213222815')[0m
+Migrating to PopulateLegacyShipmentState (20091214183826)
+  [4;36;1mPopulateLegacyShipmentState::Shipment Load (0.5ms)[0m   [0;1mSELECT * FROM `shipments` [0m
+  [4;35;1mSQL (36.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091214183826')[0m
+Migrating to AddCostPrice (20100105090147)
+  [4;36;1mSQL (186.5ms)[0m   [0;1mALTER TABLE `variants` ADD `cost_price` decimal(8,2) DEFAULT NULL[0m
+  [4;35;1mSQL (32.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100105090147')[0m
+Migrating to ShipmentIdForInventoryUnits (20100105132138)
+  [4;36;1mSQL (218.0ms)[0m   [0;1mALTER TABLE `inventory_units` ADD `shipment_id` int(11)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `inventory_units`[0m
+  [4;36;1mSQL (224.0ms)[0m   [0;1mCREATE INDEX `index_inventory_units_on_shipment_id` ON `inventory_units` (`shipment_id`)[0m
+  [4;35;1mShipment Load (0.1ms)[0m   [0mSELECT * FROM `shipments` [0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100105132138')[0m
+Migrating to CimFieldsForCreditcards (20100111205525)
+  [4;35;1mSQL (197.9ms)[0m   [0mALTER TABLE `creditcards` ADD `gateway_customer_profile_id` varchar(255)[0m
+  [4;36;1mSQL (201.3ms)[0m   [0;1mALTER TABLE `creditcards` ADD `gateway_payment_profile_id` varchar(255)[0m
+  [4;35;1mSQL (87.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100111205525')[0m
+Migrating to CreateReturnAuthorizations (20100112151511)
+  [4;36;1mSQL (102.2ms)[0m   [0;1mCREATE TABLE `return_authorizations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` varchar(255), `amount` decimal(8,2) DEFAULT 0.0 NOT NULL, `order_id` int(11), `reason` text, `state` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (32.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100112151511')[0m
+Migrating to AddReturnAuthorizationToInventoryUnits (20100113090919)
+  [4;36;1mSQL (196.4ms)[0m   [0;1mALTER TABLE `inventory_units` ADD `return_authorization_id` int(11)[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100113090919')[0m
+Migrating to CreateTrackers (20100113203104)
+  [4;36;1mSQL (104.4ms)[0m   [0;1mCREATE TABLE `trackers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `environment` varchar(255), `analytics_id` varchar(255), `active` tinyint(1) DEFAULT 1, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100113203104')[0m
+Migrating to CreditcardIdForCreditcardTxns (20100121160010)
+  [4;36;1mSQL (227.5ms)[0m   [0;1mALTER TABLE `creditcard_txns` ADD `creditcard_id` int(11)[0m
+  [4;35;1mSQL (99.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100121160010')[0m
+Migrating to OriginalCreditcardTxnIdForCreditcardTxns (20100121183934)
+  [4;36;1mSQL (383.6ms)[0m   [0;1mALTER TABLE `creditcard_txns` ADD `original_creditcard_txn_id` int(11)[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100121183934')[0m
+Migrating to AddTestModeToBillingIntegration (20100125145351)
+  [4;36;1mSQL (184.3ms)[0m   [0;1mALTER TABLE `billing_integrations` ADD `test_mode` tinyint(1) DEFAULT 1[0m
+  [4;35;1mSQL (235.0ms)[0m   [0mALTER TABLE `billing_integrations` ADD `server` varchar(255) DEFAULT 'test'[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100125145351')[0m
+Migrating to CreateProductsProductGroups (20100126103714)
+  [4;35;1mSQL (95.9ms)[0m   [0mCREATE TABLE `product_groups_products` (`product_id` int(11), `product_group_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100126103714')[0m
+Migrating to CreatePaymentMethods (20100209025806)
+  [4;35;1mSQL (96.3ms)[0m   [0mCREATE TABLE `payment_methods` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` varchar(255), `name` varchar(255), `description` text, `active` tinyint(1) DEFAULT 1, `environment` varchar(255) DEFAULT 'development', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100209025806')[0m
+Migrating to PolymorphicPayments (20100209144531)
+  [4;35;1mSQL (238.4ms)[0m   [0mALTER TABLE `payments` DROP `type`[0m
+  [4;36;1mSQL (201.9ms)[0m   [0;1mALTER TABLE `payments` DROP `creditcard_id`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `payments`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW COLUMNS FROM `payments` LIKE 'order_id'[0m
+  [4;35;1mSQL (52.7ms)[0m   [0mALTER TABLE `payments` CHANGE `order_id` `payable_id` int(11) DEFAULT NULL[0m
+  [4;36;1mSQL (234.5ms)[0m   [0;1mALTER TABLE `payments` ADD `payable_type` varchar(255)[0m
+  [4;35;1mSQL (180.9ms)[0m   [0mALTER TABLE `payments` ADD `payment_method` varchar(255)[0m
+  [4;36;1mSQL (179.4ms)[0m   [0;1mALTER TABLE `payments` ADD `source_id` int(11)[0m
+  [4;35;1mSQL (179.6ms)[0m   [0mALTER TABLE `payments` ADD `source_type` varchar(255)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mUPDATE payments SET payable_type = 'Order'[0m
+  [4;35;1mCreditcard Load (0.6ms)[0m   [0mSELECT * FROM `creditcards` [0m
+  [4;36;1mSQL (242.8ms)[0m   [0;1mALTER TABLE `creditcards` DROP `checkout_id`[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100209144531')[0m
+Migrating to ChangePaymentsPaymentMethodToBelongsTo (20100213103131)
+  [4;36;1mSQL (220.0ms)[0m   [0;1mALTER TABLE `payments` DROP `payment_method`[0m
+  [4;35;1mSQL (191.8ms)[0m   [0mALTER TABLE `payments` ADD `payment_method_id` int(11)[0m
+  [4;36;1mSQL (32.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213103131')[0m
+Migrating to AssignCreditcardTxnsToPayment (20100214212536)
+  [4;35;1mSQL (204.8ms)[0m   [0mALTER TABLE `creditcard_txns` ADD `payment_id` int(11)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT * FROM creditcard_txns[0m
+  [4;35;1mSQL (233.9ms)[0m   [0mALTER TABLE `creditcard_txns` DROP `creditcard_payment_id`[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100214212536')[0m
+Migrating to StiForTransactions (20100223170312)
+  [4;35;1mSQL (55.5ms)[0m   [0mRENAME TABLE `creditcard_txns` TO `transactions`[0m
+  [4;36;1mSQL (227.1ms)[0m   [0;1mALTER TABLE `transactions` ADD `type` varchar(255)[0m
+  [4;35;1mSQL (189.8ms)[0m   [0mALTER TABLE `transactions` DROP `creditcard_id`[0m
+  [4;36;1mTransaction Update (0.5ms)[0m   [0;1mUPDATE `transactions` SET `type` = 'CreditcardTxn' [0m
+  [4;35;1mSQL (39.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100223170312')[0m
+Migrating to DropBillingIntegrations (20100223183812)
+  [4;36;1mSQL (36.6ms)[0m   [0;1mDROP TABLE `billing_integrations`[0m
+  [4;35;1mSQL (33.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100223183812')[0m
+Migrating to DeletedAtForPaymentMethods (20100224153127)
+  [4;36;1mSQL (196.5ms)[0m   [0;1mALTER TABLE `payment_methods` ADD `deleted_at` datetime DEFAULT NULL[0m
+  [4;35;1mSQL (43.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100224153127')[0m
+Migrating to AddAdjustmentsIndex (20100301163454)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `adjustments`[0m
+  [4;35;1mSQL (237.5ms)[0m   [0mCREATE INDEX `index_adjustments_on_order_id` ON `adjustments` (`order_id`)[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100301163454')[0m
+Migrating to FixByPopularity (20100306153445)
+  [4;35;1mProductScope Update (0.5ms)[0m   [0mUPDATE `product_scopes` SET name='descend_by_popularity' WHERE (name='by_popularity') [0m
+  [4;36;1mSQL (45.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100306153445')[0m
+Migrating to AddAltTextToImages (20100317120946)
+  [4;35;1mSQL (205.4ms)[0m   [0mALTER TABLE `assets` ADD `alt` text[0m
+  [4;36;1mSQL (32.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100317120946')[0m
+Migrating to AddDisplayToPaymentMethods (20100427121301)
+  [4;35;1mSQL (199.7ms)[0m   [0mALTER TABLE `payment_methods` ADD `display` varchar(255) DEFAULT NULL[0m
+  [4;36;1mSQL (32.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100427121301')[0m
+Migrating to AddAddressesCheckoutsIndexes (20100504142133)
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `addresses`[0m
+  [4;36;1mSQL (203.5ms)[0m   [0;1mCREATE INDEX `index_addresses_on_firstname` ON `addresses` (`firstname`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `addresses`[0m
+  [4;36;1mSQL (234.2ms)[0m   [0;1mCREATE INDEX `index_addresses_on_lastname` ON `addresses` (`lastname`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `checkouts`[0m
+  [4;36;1mSQL (212.0ms)[0m   [0;1mCREATE INDEX `index_checkouts_on_order_id` ON `checkouts` (`order_id`)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `checkouts`[0m
+  [4;36;1mSQL (200.2ms)[0m   [0;1mCREATE INDEX `index_checkouts_on_bill_address_id` ON `checkouts` (`bill_address_id`)[0m
+  [4;35;1mSQL (32.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100504142133')[0m
+Migrating to AddIconToTaxons (20100506180619)
+  [4;36;1mTaxon Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mSQL (202.2ms)[0m   [0mALTER TABLE `taxons` ADD `icon_file_name` varchar(255)[0m
+  [4;36;1mSQL (246.0ms)[0m   [0;1mALTER TABLE `taxons` ADD `icon_content_type` varchar(255)[0m
+  [4;35;1mSQL (234.9ms)[0m   [0mALTER TABLE `taxons` ADD `icon_file_size` int(11)[0m
+  [4;36;1mSQL (190.2ms)[0m   [0;1mALTER TABLE `taxons` ADD `icon_updated_at` datetime[0m
+  [4;35;1mSQL (32.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100506180619')[0m
+Migrating to AddDescriptionToTaxons (20100506185838)
+  [4;36;1mSQL (249.5ms)[0m   [0;1mALTER TABLE `taxons` ADD `description` text[0m
+  [4;35;1mSQL (32.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100506185838')[0m
+Migrating to IndexForShipmentsNumber (20100528155333)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `shipments`[0m
+  [4;35;1mSQL (207.6ms)[0m   [0mCREATE INDEX `index_shipments_on_number` ON `shipments` (`number`)[0m
+  [4;36;1mSQL (43.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100528155333')[0m
+Migrating to AddIndexOnUsersPersistenceToken (20100528185820)
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (248.4ms)[0m   [0;1mCREATE INDEX `index_users_on_persistence_token` ON `users` (`persistence_token`)[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100528185820')[0m
+Migrating to AddDefaultToTaxCategories (20100605152042)
+  [4;36;1mSQL (194.0ms)[0m   [0;1mALTER TABLE `tax_categories` ADD `is_default` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (32.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100605152042')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to MoveToConfigurableGateways (20091008091614)
+  [4;36;1mSQL (40.4ms)[0m   [0;1mDROP TABLE `gateways`[0m
+  [4;35;1mSQL (33.8ms)[0m   [0mDROP TABLE `gateway_options`[0m
+  [4;36;1mSQL (33.2ms)[0m   [0;1mDROP TABLE `gateway_option_values`[0m
+  [4;35;1mSQL (33.2ms)[0m   [0mDROP TABLE `gateway_configurations`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `gateways` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` varchar(255), `name` varchar(255), `description` text, `active` tinyint(1) DEFAULT 1, `environment` varchar(255) DEFAULT 'development', `server` varchar(255) DEFAULT 'test', `test_mode` tinyint(1) DEFAULT 1, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (33.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091008091614')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to AddApiKeyToUsers (20100107141738)
+  [4;35;1mSQL (241.4ms)[0m   [0mALTER TABLE `users` ADD `api_key` varchar(40)[0m
+  [4;36;1mSQL (43.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100107141738')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to MoveToConfigurableGateways (20091008091614)
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to AddApiKeyToUsers (20100107141738)
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/theme_default/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/overview_dashboard/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/payment_gateway/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Loading mail preferences
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.4ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAppConfiguration Load (0.4ms)[0m   [0mSELECT `configurations`.id FROM `configurations` WHERE (`configurations`.`name` = BINARY 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+  [4;36;1mAppConfiguration Create (0.3ms)[0m   [0;1mINSERT INTO `configurations` (`name`, `created_at`, `updated_at`, `type`) VALUES('Default configuration', '2010-09-28 05:16:03', '2010-09-28 05:16:03', 'AppConfiguration')[0m
+  [4;35;1mSQL (35.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPreference Load (0.5ms)[0m   [0;1mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration' AND (`preferences`.`attribute` = 'enable_mail_delivery' AND `preferences`.`group_id` IS NULL AND `preferences`.`group_type` IS NULL)) LIMIT 1[0m
+NOTICE: Mail not enabled
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (30.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+INFO: Loading initializer /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/config/initializers/session_store.rb
+  [4;35;1mOrder Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (21.2ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/api/config/routes.rb
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/overview_dashboard/config/routes.rb
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/payment_gateway/config/routes.rb
+INFO: Loading routes from /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/config/routes.rb
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.6ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mOrder Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mShipment Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `shipments`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 13:16:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.5ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache miss: Spree::Config ({})
+  [4;35;1mPreference Load (0.4ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration') [0m
+Cache write (will save 8.76ms): Spree::Config
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '26c89d7f85bb6128fdaecf91b4381dc1899d7b7bb8e8f559e06c69acdd5f2ad8e1f3c614c7f83e8802e7dda4a0e8b37ca5b5ca85ee201a86080e0a7c65a40ab6') LIMIT 1[0m
+  [4;35;1mRole Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+Rendering template within layouts/spree_application
+Rendering users/new
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_user_form (11.0ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.6ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mVariant Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Load (0.6ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (300.4ms)
+Rendered shared/_login_bar (28.1ms)
+Rendered shared/_store_menu (25.8ms)
+Rendered shared/_nav_bar (375.6ms)
+Cache hit: Spree::Config ({})
+  [4;35;1mTracker Load (0.5ms)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (14.0ms)
+Rendered shared/_footer (61.9ms)
+Completed in 904ms (View: 523, DB: 13) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 13:16:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '26c89d7f85bb6128fdaecf91b4381dc1899d7b7bb8e8f559e06c69acdd5f2ad8e1f3c614c7f83e8802e7dda4a0e8b37ca5b5ca85ee201a86080e0a7c65a40ab6') LIMIT 1[0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+Rendering template within layouts/spree_application
+Rendering users/new
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_user_form (10.2ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.3ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mVariant Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Load (0.1ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (287.9ms)
+Rendered shared/_login_bar (1.1ms)
+Rendered shared/_store_menu (1.2ms)
+Rendered shared/_nav_bar (304.0ms)
+Cache hit: Spree::Config ({})
+  [4;35;1mTracker Load (0.1ms)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (12.9ms)
+Rendered shared/_footer (18.9ms)
+Completed in 709ms (View: 367, DB: 10) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 13:16:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '26c89d7f85bb6128fdaecf91b4381dc1899d7b7bb8e8f559e06c69acdd5f2ad8e1f3c614c7f83e8802e7dda4a0e8b37ca5b5ca85ee201a86080e0a7c65a40ab6') LIMIT 1[0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+Rendering template within layouts/spree_application
+Rendering users/new
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_user_form (10.2ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.3ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mVariant Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Load (0.1ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (295.2ms)
+Rendered shared/_login_bar (1.3ms)
+Rendered shared/_store_menu (1.4ms)
+Rendered shared/_nav_bar (312.4ms)
+Cache hit: Spree::Config ({})
+  [4;35;1mTracker Load (0.1ms)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (10.9ms)
+Rendered shared/_footer (16.0ms)
+Completed in 619ms (View: 370, DB: 10) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 13:16:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '26c89d7f85bb6128fdaecf91b4381dc1899d7b7bb8e8f559e06c69acdd5f2ad8e1f3c614c7f83e8802e7dda4a0e8b37ca5b5ca85ee201a86080e0a7c65a40ab6') LIMIT 1[0m
+  [4;35;1mRole Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+Rendering template within layouts/spree_application
+Rendering users/new
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_user_form (10.4ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.1ms)
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mVariant Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Load (0.1ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (293.9ms)
+Rendered shared/_login_bar (1.2ms)
+Rendered shared/_store_menu (1.1ms)
+Rendered shared/_nav_bar (309.8ms)
+Cache hit: Spree::Config ({})
+  [4;35;1mTracker Load (0.1ms)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (11.6ms)
+Rendered shared/_footer (106.3ms)
+Completed in 701ms (View: 452, DB: 13) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 13:17:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.2ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '26c89d7f85bb6128fdaecf91b4381dc1899d7b7bb8e8f559e06c69acdd5f2ad8e1f3c614c7f83e8802e7dda4a0e8b37ca5b5ca85ee201a86080e0a7c65a40ab6') LIMIT 1[0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+Rendering template within layouts/spree_application
+Rendering users/new
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_user_form (106.9ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.4ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mVariant Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Load (0.1ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (279.5ms)
+Rendered shared/_login_bar (1.3ms)
+Rendered shared/_store_menu (1.2ms)
+Rendered shared/_nav_bar (298.2ms)
+Cache hit: Spree::Config ({})
+  [4;35;1mTracker Load (0.1ms)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (10.6ms)
+Rendered shared/_footer (15.8ms)
+Completed in 693ms (View: 451, DB: 14) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 13:18:17) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"FYdr4PO+i2LveLdDP2DkP0ZBoculzy/QYmBZHa2cotI=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "openid_identifier"=>"", "password"=>"[FILTERED]", "email"=>"sazlin.solai@cs8.my"}}
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '26c89d7f85bb6128fdaecf91b4381dc1899d7b7bb8e8f559e06c69acdd5f2ad8e1f3c614c7f83e8802e7dda4a0e8b37ca5b5ca85ee201a86080e0a7c65a40ab6') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sazlin.solai@cs8.my') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'sazlin.solai@cs8.my') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '18ecade0bb4a0a5d5742b97a074f79af734e9303db01a77b71f0b6d6c5e96087983f852da628f412487bb3e6e2bea42c7ad4516cbaf9d8e5198312eaaf504385') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'pMxkeb85VqufeQOwkdL8') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '26c89d7f85bb6128fdaecf91b4381dc1899d7b7bb8e8f559e06c69acdd5f2ad8e1f3c614c7f83e8802e7dda4a0e8b37ca5b5ca85ee201a86080e0a7c65a40ab6') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO `users` (`salt`, `ship_address_id`, `created_at`, `single_access_token`, `last_request_at`, `bill_address_id`, `crypted_password`, `remember_token_expires_at`, `updated_at`, `perishable_token`, `api_key`, `failed_login_count`, `current_login_ip`, `openid_identifier`, `current_login_at`, `remember_token`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `login`, `email`) VALUES('glb028AKmnTL_cOtxjlQ', NULL, '2010-09-28 05:18:17', 'pMxkeb85VqufeQOwkdL8', '2010-09-28 05:18:17', NULL, '1d41e3d9f8957ec114376cd7b9ebc16fe307d0f59a860b3060aff50fe71ed5a2be14b2c4de6ae6047d9807e33a60b577c96471b695cbbcf60a2f090a4500b378', NULL, '2010-09-28 05:18:17', 'ombMiEGkTT2j7tR07eru', NULL, 0, '127.0.0.1', NULL, '2010-09-28 05:18:17', NULL, '18ecade0bb4a0a5d5742b97a074f79af734e9303db01a77b71f0b6d6c5e96087983f852da628f412487bb3e6e2bea42c7ad4516cbaf9d8e5198312eaaf504385', 1, NULL, NULL, 'sazlin.solai@cs8.my', 'sazlin.solai@cs8.my')[0m
+  [4;36;1mSQL (31.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.7ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`name` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::AssociationTypeMismatch (Role(#-617696118) expected, got NilClass(#-608237108)):
+  spree (0.11.0) app/controllers/users_controller.rb:18:in `create'
+  /usr/lib/ruby/gems/1.8/gems/authlogic-oid-1.0.4/lib/authlogic_openid/acts_as_authentic.rb:75:in `save'
+  spree (0.11.0) app/controllers/users_controller.rb:15:in `create'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/theme_default/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/overview_dashboard/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/payment_gateway/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Mirroring assets from /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/public to /home/sazlin/CS8Project/bro2bro/public
+INFO: Loading mail preferences
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.3ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+  [4;36;1mPreference Load (0.1ms)[0m   [0;1mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration' AND (`preferences`.`attribute` = 'enable_mail_delivery' AND `preferences`.`group_id` IS NULL AND `preferences`.`group_type` IS NULL)) LIMIT 1[0m
+NOTICE: Mail not enabled
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+INFO: Loading initializer /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/config/initializers/session_store.rb
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/api/config/routes.rb
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/overview_dashboard/config/routes.rb
+INFO: Loading routes from /usr/lib/ruby/gems/1.8/gems/spree-0.11.0/vendor/extensions/payment_gateway/config/routes.rb
+INFO: Loading routes from /home/sazlin/CS8Project/bro2bro/vendor/extensions/site/config/routes.rb
+  [4;35;1mRole Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'spree@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'spree@example.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'spree@example.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '42c39009ae3ea44f64020cef153fef5c9a5bb2de0ee2f3b6a0f6a7cbdbffb99db502575dbf491a4a699f54174f9e0ae23fa89e5025018a0fbb8bc008416a270c') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'p1kZiv5gyfzl0xiDnNL8') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'spree@example.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'spree@example.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '42c39009ae3ea44f64020cef153fef5c9a5bb2de0ee2f3b6a0f6a7cbdbffb99db502575dbf491a4a699f54174f9e0ae23fa89e5025018a0fbb8bc008416a270c') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'p1kZiv5gyfzl0xiDnNL8') LIMIT 1[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`salt`, `ship_address_id`, `created_at`, `single_access_token`, `last_request_at`, `bill_address_id`, `crypted_password`, `remember_token_expires_at`, `updated_at`, `perishable_token`, `api_key`, `failed_login_count`, `current_login_ip`, `openid_identifier`, `current_login_at`, `remember_token`, `persistence_token`, `login_count`, `last_login_ip`, `last_login_at`, `login`, `email`) VALUES('VhHYhVqxAwP4AIgAuD6I', NULL, '2010-09-28 05:19:20', 'p1kZiv5gyfzl0xiDnNL8', NULL, NULL, '542a674dc2777256e7365d32f542f457481f76e3af58b8daed07da493608e669f9d8281f35d6337c62f1c61b4f5f6a0f029348fc80c7fca4979ce69bb4a8a214', NULL, '2010-09-28 05:19:20', 'xDIyLL12f_4JsZFkR0Hb', NULL, 0, NULL, NULL, NULL, NULL, '42c39009ae3ea44f64020cef153fef5c9a5bb2de0ee2f3b6a0f6a7cbdbffb99db502575dbf491a4a699f54174f9e0ae23fa89e5025018a0fbb8bc008416a270c', 0, NULL, NULL, 'spree@example.com', 'spree@example.com')[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`name` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Create (0.3ms)[0m   [0mINSERT INTO `roles` (`name`) VALUES('admin')[0m
+  [4;36;1mSQL (26.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `roles_users`[0m
+  [4;35;1mroles_users Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO `roles_users` (`role_id`, `user_id`) VALUES (1, 2)[0m
+  [4;35;1mSQL (28.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Load (0.4ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-28 05:19:20', `perishable_token` = '7AXPPYchde2nrkpV-Nx2' WHERE `id` = 2[0m
+  [4;36;1mSQL (41.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mOrder Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mShipment Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `shipments`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.4ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.4ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `users`.`openid_identifier` AS t0_r21, `users`.`api_key` AS t0_r22, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (2) [0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-28 13:19:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.1ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '18ecade0bb4a0a5d5742b97a074f79af734e9303db01a77b71f0b6d6c5e96087983f852da628f412487bb3e6e2bea42c7ad4516cbaf9d8e5198312eaaf504385') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-28 05:19:27', `perishable_token` = 'sRXOjuCDQDSmXr6IM0PH', `last_request_at` = '2010-09-28 05:19:27' WHERE `id` = 1[0m
+  [4;35;1mSQL (56.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 303ms (DB: 63) | 302 Found [http://localhost/login]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.4ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load Including Associations (0.4ms)[0m   [0;1mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `users`.`openid_identifier` AS t0_r21, `users`.`api_key` AS t0_r22, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (2) [0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-09-28 13:19:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;36;1mProductGroup Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `product_groups`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mVariant Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mProduct Load (0.7ms)[0m   [0;1mSELECT * FROM `products` WHERE ((products.available_on <= '2010-09-28 05:19:28') AND (products.deleted_at is null)) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `products` WHERE ((products.available_on <= '2010-09-28 05:19:28') AND (products.deleted_at is null)) [0m
+Rendering template within layouts/spree_application
+Rendering products/index
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM `taxonomies` [0m
+Rendered shared/_taxonomies (13.3ms)
+Rendered shared/_products (16.0ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.0ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProperty Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `properties`[0m
+  [4;35;1mProperty Load (0.1ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxon Load (0.1ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (143.2ms)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '18ecade0bb4a0a5d5742b97a074f79af734e9303db01a77b71f0b6d6c5e96087983f852da628f412487bb3e6e2bea42c7ad4516cbaf9d8e5198312eaaf504385') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-28 05:19:28', `perishable_token` = 'nzp5Cumxlq8qYNLKIF0K', `last_request_at` = '2010-09-28 05:19:28' WHERE `id` = 1[0m
+  [4;36;1mSQL (61.8ms)[0m   [0;1mCOMMIT[0m
+Rendered shared/_login_bar (85.8ms)
+Rendered shared/_store_menu (2.4ms)
+Rendered shared/_nav_bar (250.8ms)
+Cache hit: Spree::Config ({})
+  [4;35;1mTracker Load (0.1ms)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (11.0ms)
+Rendered shared/_footer (16.7ms)
+Completed in 800ms (View: 312, DB: 78) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.4ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load Including Associations (0.4ms)[0m   [0;1mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `users`.`openid_identifier` AS t0_r21, `users`.`api_key` AS t0_r22, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (2) [0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-28 13:19:33) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '18ecade0bb4a0a5d5742b97a074f79af734e9303db01a77b71f0b6d6c5e96087983f852da628f412487bb3e6e2bea42c7ad4516cbaf9d8e5198312eaaf504385') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-28 05:19:33', `perishable_token` = 'UU0B0NfCGxes-erReKxg', `last_request_at` = '2010-09-28 05:19:33' WHERE `id` = 1[0m
+  [4;36;1mSQL (37.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products
+Completed in 302ms (DB: 45) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mOrder Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mShipment Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `shipments`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.4ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.6ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `users`.`openid_identifier` AS t0_r21, `users`.`api_key` AS t0_r22, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (2) [0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-09-28 13:19:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.1ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;35;1mProductGroup Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `product_groups`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mVariant Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `variants`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM `products` WHERE ((products.available_on <= '2010-09-28 05:19:35') AND (products.deleted_at is null)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE ((products.available_on <= '2010-09-28 05:19:35') AND (products.deleted_at is null)) [0m
+Rendering template within layouts/spree_application
+Rendering products/index
+  [4;35;1mTaxonomy Load (0.1ms)[0m   [0mSELECT * FROM `taxonomies` [0m
+Rendered shared/_taxonomies (10.6ms)
+Rendered shared/_products (15.4ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.1ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.2ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Load (0.2ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (147.6ms)
+Rendered shared/_login_bar (10.2ms)
+Rendered shared/_store_menu (1.3ms)
+Rendered shared/_nav_bar (175.1ms)
+Cache hit: Spree::Config ({})
+  [4;35;1mTracker Load (0.1ms)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (11.4ms)
+Rendered shared/_footer (17.2ms)
+Completed in 647ms (View: 259, DB: 13) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mShipment Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `shipments`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRole Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load Including Associations (0.1ms)[0m   [0;1mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `users`.`openid_identifier` AS t0_r21, `users`.`api_key` AS t0_r22, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (2) [0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-28 13:19:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendering template within layouts/spree_application
+Rendering user_sessions/new
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_login (7.1ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.1ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mVariant Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `variants`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProduct Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProperty Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `properties`[0m
+  [4;35;1mProperty Load (0.1ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxon Load (0.1ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (313.6ms)
+Rendered shared/_login_bar (1.1ms)
+Rendered shared/_store_menu (1.3ms)
+Rendered shared/_nav_bar (331.2ms)
+Cache hit: Spree::Config ({})
+  [4;36;1mTracker Load (0.1ms)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (10.8ms)
+Rendered shared/_footer (16.2ms)
+Completed in 646ms (View: 387, DB: 12) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mOrder Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mShipment Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `shipments`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.1ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.1ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `users`.`openid_identifier` AS t0_r21, `users`.`api_key` AS t0_r22, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (2) [0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-28 13:19:51) [POST]
+  Parameters: {"commit"=>"Log In", "user_session"=>{"remember_me"=>"0", "openid_identifier"=>"", "password"=>"[FILTERED]", "login"=>"spree@example.com"}, "action"=>"create", "authenticity_token"=>"i0N5c2mjbuo+Aua3UHD+I4/EbvBXt7LvpjxWQ3PPY5I=", "controller"=>"user_sessions"}
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.1ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'spree@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-28 05:19:51', `perishable_token` = 'K3VnlDbMCUmRtsbzp0n0', `current_login_at` = '2010-09-28 05:19:51', `login_count` = 1, `current_login_ip` = '127.0.0.1', `last_request_at` = '2010-09-28 05:19:51' WHERE `id` = 2[0m
+  [4;35;1mSQL (36.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mOrder Load (0.3ms)[0m   [0;1mSELECT * FROM `orders` WHERE (`orders`.user_id = 2 AND (`orders`.`completed_at` IS NULL)) ORDER BY orders.id DESC LIMIT 1[0m
+Redirected to http://localhost:3000/products
+Completed in 286ms (DB: 43) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mOrder Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mShipment Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `shipments`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.4ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.4ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `users`.`ship_address_id` AS t0_r19, `users`.`bill_address_id` AS t0_r20, `users`.`openid_identifier` AS t0_r21, `users`.`api_key` AS t0_r22, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (2) [0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-09-28 13:19:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.1ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;35;1mProductGroup Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `product_groups`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mVariant Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `variants`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM `products` WHERE ((products.available_on <= '2010-09-28 05:19:52') AND (products.deleted_at is null)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` WHERE ((products.available_on <= '2010-09-28 05:19:52') AND (products.deleted_at is null)) [0m
+Rendering template within layouts/spree_application
+Rendering products/index
+  [4;35;1mTaxonomy Load (0.1ms)[0m   [0mSELECT * FROM `taxonomies` [0m
+Rendered shared/_taxonomies (10.3ms)
+Rendered shared/_products (15.1ms)
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.1ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProperty Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.1ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxon Load (0.1ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (149.1ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-28 05:19:52', `perishable_token` = 'wxJRdjJAkLqihgsAEiNe', `last_request_at` = '2010-09-28 05:19:52' WHERE `id` = 2[0m
+  [4;35;1mSQL (36.7ms)[0m   [0mCOMMIT[0m
+Rendered shared/_login_bar (60.1ms)
+Rendered shared/_store_menu (3.0ms)
+Rendered shared/_nav_bar (230.8ms)
+Cache hit: Spree::Config ({})
+  [4;36;1mTracker Load (0.1ms)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (11.0ms)
+Rendered shared/_footer (16.1ms)
+Completed in 714ms (View: 276, DB: 52) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mOrder Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mShipment Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `shipments`[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-28 13:19:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.2ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '2') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`name` = 'user') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-28 05:19:57', `perishable_token` = 'xWA3uQdpaj9C2jzOhk1R', `last_request_at` = '2010-09-28 05:19:57' WHERE `id` = 2[0m
+  [4;36;1mSQL (42.5ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/spree_application
+Rendering users/show
+  [4;35;1mOrder Load (0.4ms)[0m   [0mSELECT * FROM `orders` WHERE (`orders`.user_id = 2) AND ((orders.completed_at IS NOT NULL) AND (`orders`.user_id = 2)) [0m
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Cache hit: Spree::Config ({})
+Rendered shared/_head (2.4ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mVariant Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `variants`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProperty Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `properties`[0m
+  [4;35;1mProperty Load (0.1ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`name` = 'brand') LIMIT 1[0m
+  [4;36;1mSQL (5.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxon Load (0.2ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`parent_id` IS NULL) ORDER BY `lft`[0m
+Rendered shared/_search (295.1ms)
+Rendered shared/_login_bar (1.6ms)
+Rendered shared/_store_menu (1.6ms)
+Rendered shared/_nav_bar (423.3ms)
+Cache hit: Spree::Config ({})
+  [4;36;1mTracker Load (0.2ms)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`environment` = 'development' AND `trackers`.`active` = 1) LIMIT 1[0m
+Rendered shared/_google_analytics (11.2ms)
+Rendered shared/_footer (16.7ms)
+Completed in 790ms (View: 476, DB: 61) | 200 OK [http://localhost/users/2]
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
